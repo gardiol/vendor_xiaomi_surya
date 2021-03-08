@@ -169,7 +169,16 @@ on boot
 #add for MI-cit white-led
     chown system system /sys/class/leds/white/brightness
     chown system system /sys/class/leds/white/max_brightness
+    chmod g+w /sys/class/leds/white/brightness
+    chmod g+w /sys/class/leds/white/max_brightness
+    chown system system /sys/class/leds/white/delay_on
+    chown system system /sys/class/leds/white/delay_off
+    chmod g+w /sys/class/leds/white/delay_on
+    chmod g+w /sys/class/leds/white/delay_off
 
+# Tap to wake node
+    chown system system /dev/input/event1
+    chmod g+rw /dev/input/event1
 
 #add for mishow
 chmod 0777 /sys/class/power_supply/battery/input_suspend
